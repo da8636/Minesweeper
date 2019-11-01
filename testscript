@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+for test in tests/*.in; do
+	echo $test;
+	./minesweeper < $test |  diff - ${test/.in/.out} && echo ok;
+done;
